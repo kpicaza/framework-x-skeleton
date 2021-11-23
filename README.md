@@ -1,15 +1,35 @@
 # Framework X Skeleton
 
+Project Skeleton for Framework X Apps
+
 * [Framework X](https://framework-x.org/)
 * [PSR-11 Container](https://www.php-fig.org/psr/psr-11/)
+* [PSR-15 Request Handlers](https://www.php-fig.org/psr/psr-15/)
+* [PSR-15 Middleware](https://www.php-fig.org/psr/psr-15/) (TODO)
 
 ## Install
 
+## Local
+
 ```bash
-git clone 
+git clone git@github.com:kpicaza/framework-x-skeleton.git
 cd framework-x-skeleton
 composer create-project
+php public/index.php
 ```
+Open your browser at http://127.0.0.1:8080.
+
+## Docker Compose
+
+```bash
+git clone git@github.com:kpicaza/framework-x-skeleton.git
+cd framework-x-skeleton
+docker-compose build
+docker-compose run --user=www-data --rm composer create-project
+docker-compose up
+```
+
+Open your browser at http://127.0.0.1.
 
 ## Usage
 
@@ -51,16 +71,16 @@ return [
     'dependencies' => [
         'factories' => [
             // service => factory pairs
-            SomePageHandler::class => SomePageHandlerFactory::class,
+            // SomePageHandler::class => SomePageHandlerFactory::class,
         ],
         'invokables' => [
             // service => instantiable class pairs
-            SomeInstantiableClass::class => SomeInstantiableClass::class,
-            'an-alias-for' => SomeInstantiableClass::class,
+            \App\HomePage::class => \App\HomePage::class,
+            // 'an-alias-for' => SomeInstantiableClass::class,
         ],
     ],
 ];
-´´´
+```
 
 ### Routing 
 

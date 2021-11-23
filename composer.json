@@ -1,6 +1,6 @@
 {
     "name": "kpicaza/x-framework-skeleton",
-    "description": "Project Skeleton for X Framework",
+    "description": "Project Skeleton for Framework X Apps",
     "license": "MIT",
     "type": "project",
     "require": {
